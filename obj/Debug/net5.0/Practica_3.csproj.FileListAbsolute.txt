@@ -1,0 +1,8 @@
+/home/sansepi0l/Documentos/Proyectos_-_ASP.NET/Practica_3/obj/Debug/net5.0/Practica_3.csproj.AssemblyReference.cache
+/home/sansepi0l/Documentos/Proyectos_-_ASP.NET/Practica_3/obj/Debug/net5.0/Practica_3.GeneratedMSBuildEditorConfig.editorconfig
+/home/sansepi0l/Documentos/Proyectos_-_ASP.NET/Practica_3/obj/Debug/net5.0/Practica_3.AssemblyInfoInputs.cache
+/home/sansepi0l/Documentos/Proyectos_-_ASP.NET/Practica_3/obj/Debug/net5.0/Practica_3.AssemblyInfo.cs
+/home/sansepi0l/Documentos/Proyectos_-_ASP.NET/Practica_3/obj/Debug/net5.0/Practica_3.csproj.CoreCompileInputs.cache
+/home/sansepi0l/Documentos/Proyectos_-_ASP.NET/Practica_3/obj/Debug/net5.0/Practica_3.MvcApplicationPartsAssemblyInfo.cache
+/home/sansepi0l/Documentos/Proyectos_-_ASP.NET/Practica_3/obj/Debug/net5.0/Practica_3.RazorAssemblyInfo.cache
+/home/sansepi0l/Documentos/Proyectos_-_ASP.NET/Practica_3/obj/Debug/net5.0/Practica_3.RazorAssemblyInfo.cs
