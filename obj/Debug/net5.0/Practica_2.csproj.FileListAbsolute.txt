@@ -1470,3 +1470,4 @@ C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\bin\Debug\net5.0\zh-Hant
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Practica_2.Views.pdb
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Practica_2.csproj.CopyComplete
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Practica_2.genruntimeconfig.cache
+C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Vet\Editar.cshtml.g.cs
