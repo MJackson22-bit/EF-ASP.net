@@ -2,15 +2,12 @@
 @section styles{
     <link rel="stylesheet" href="noticia_style.css" type="text/css">
 }
-<div class="row">
-    <h1 style="padding-left: 40%;">@Model.Veterinaria.Nombre</h1>
+<div class="row" >
+    <h1 style="margin-left: 45%;">@Model.Veterinaria.Nombre</h1>
     <br><br><br>
 </div>
-<div class="container">
-  <div class="col-md-3" > 
-      <img style="padding-left: 90%" src="@Model.Veterinaria.ImageDetail" class="imagen" alt="...">
-     
-    </div>
+<div class="row" >
+  <img style="margin-left: 40%;" src="@Model.Veterinaria.ImageDetail" class="imagen" alt="...">
 </div>
 @section Rigth{
  <div class="col-md-14">

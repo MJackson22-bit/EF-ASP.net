@@ -29,8 +29,35 @@ namespace Practica_2.Controllers
             var jsonString = System.IO.File.ReadAllText("Models/Noticias.json");
             listNoticias = JsonConvert.DeserializeObject<List<Noticias>>(jsonString);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Editar(int? Id, Veterinaria model){
+            if(Id == null){
+                return NotFound();
+            }
+            if(ModelState.IsValid){
+                try{
+                    _context.Update(model);
+                    await _context.SaveChangesAsync();
+                    return View("Index", await _context.Veterinarias.ToListAsync());
+                }catch(DbUpdateConcurrencyException){
+                    throw;
+                }
+            }
+            return View("Editar", model);
+        }
 
-
+        [HttpGet]
+        public async Task<IActionResult> Editar(int? Id){
+            if(Id == null){
+                return NotFound();
+            }
+            var veter = await _context.Veterinarias.FindAsync(Id);
+            if(veter == null){
+                return NotFound();
+            }
+            return View(veter);
+        }
         public IActionResult Agregar()
         {
             return View(new Veterinaria());

@@ -22,9 +22,9 @@ $(document).ready(function(){
 
 function deleteVet(id) {
     Swal.fire({
-        title: 'Error!',
+        title: '¡Alerta!',
         text: "¿Seguro que quieres eliminarlo?",
-        icon: 'error',
+        icon: 'warning',
         showDenyButton: true,
         confirmButton: 'Eliminar',
         denyButtonText: 'Cancelar',
