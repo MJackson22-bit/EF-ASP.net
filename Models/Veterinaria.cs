@@ -8,40 +8,21 @@ namespace Practica_2.Models
         [Required]
         [Display(Name = "Nombre")]
         public string Nombre{get; set;}
-
         [Required]
         [Display(Name = "Descripcion")]
         public string Descripcion{get; set;}
-
-        [Required]
-        [Display(Name = "Modo")]
         public string Modo{get; set;}
-
-        [Required]
-        [Display(Name = "Aplicabilidad")]
         public string Aplicabilidad{get; set;}
-
-        [Required]
-        [Display(Name = "Formulación")]
+         [Required]
+        [Display(Name = "Foemulación")]
         public string Formulacion{get; set;}
        
-        [Required]
-        [Display(Name = "Indicaciones")]
         public string Indicaciones{get; set;}
-
-        [Required]
-        [Display(Name = "DosisAdm")]
         public string DosisAdm{get; set;}
-
-        [Required]
-        [Display(Name = "Presentacion")]
         public string Presentacion{get; set;}
-
-        [NotMapped]
-        public string Images { get; set; }
-
-        [Display(Name = "Imagenes en Json")]
-        [Colum(TypeName = "json")]
-        public string ImageJson { get; set;}
+        [Display(Name = "Upload File")]
+        [DataType(DataType.Upload)]
+        public string Image{get; set;}
+        public string ImageDetail{get; set;}
     }
 }

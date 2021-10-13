@@ -1,0 +1,57 @@
+@model Practica_2.Models.Veterinaria
+<div class="container">
+  <div class="card">
+  <h5 class="card-header">Datos del Producto</h5>
+  <div class="card-body">
+      <div asp-validation-summary="ModelOnly"></div>
+      <div class="form-group">
+        <label asp-for="Nombre"></label><br />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+        <input asp-for="Nombre" class="form-control" />
+      </div>
+      
+      <div class="form-group">
+        <label asp-for="Descripcion"></label>
+        <input asp-for="Descripcion" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label asp-for="Modo"></label>
+        <input asp-for="Modo" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label asp-for="Aplicabilidad"></label>
+        <input asp-for="Aplicabilidad" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label asp-for="Formulación"></label>
+        <input asp-for="Formulación" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label asp-for="Indicaciones"></label>
+        <select asp-for="Indicaciones" asp-items="ViewBag.Generes" class="form-control"></select>
+      </div>
+
+       <div class="form-group">
+        <label asp-for="DosisAdm"></label>
+        <select asp-for="DosisAdm" asp-items="ViewBag.Generes" class="form-control"></select>
+      </div>
+
+       <div class="form-group">
+        <label asp-for="Presentacion"></label>
+        <select asp-for="Presentacion" asp-items="ViewBag.Generes" class="form-control"></select>
+      </div>
+      
+      <div class="form-group">
+        <label asp-for="ImagesJson"></label>
+        <input asp-for="ImagesJson" class="form-control" />
+      </div>
+
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </div>
+</div>
+@await Component.InvokeAsync("Noticias", new {num = 4})
+</div>
