@@ -1,0 +1,17 @@
+@model List<Practica_2.Models.Noticias>
+    <div class="container" >
+        <h3> Noticias Recientes
+        </h3>
+@foreach (var item in Model)
+{
+    <div class="card" style="margin-bottom: 50px;">
+    <div class="card-body">
+        <h5 class="card-title">@item.Titulo</h5>
+        <p class="card-text">@item.Descripcion</p>
+        <p class="card-text"><small class="text-muted">@item.Posteo</small></p>
+    </div>
+    <img class="card-img-bottom" src="@item.Imagen" alt="Card image cap">
+</div>
+}
+
+    </div>
