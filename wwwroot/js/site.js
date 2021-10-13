@@ -15,3 +15,22 @@ function loadNoticias(id, event){
 $(document).ready(function(){
     $(".toast").toast('show');
 });
+
+$(document).ready(function(){
+    $(".toast").toast('show');
+});
+
+function deleteVet(id) {
+    Swal.fire({
+        title: 'Error!',
+        text: "¿Seguro que quieres eliminarlo?",
+        icon: 'error',
+        showDenyButton: true,
+        confirmButton: 'Eliminar',
+        denyButtonText: 'Cancelar',
+    }).then((result) => {
+        if(result.isConfirmed) {
+            window.location.href = "https://localhost:5001/Vet/Delete/" + id;
+        }
+    });
+}

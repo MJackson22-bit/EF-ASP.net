@@ -4,6 +4,10 @@
   {
     <div class="col-md-4">
       <div class="card mb-5">
+        <div class="card-header">
+          <button onclick="deleteVet(@item.Id)" type="button" class="m-0 close" data-dismiss="toast" aria-label="Close"/>
+          <span aria-hidden="true">&times;</span>
+        </div>
         <img src="@item.Image" class="card-img-top" alt="...">
         <div class="card-body">
           <strong>
@@ -12,6 +16,7 @@
           <p class="card-text">@item.Descripcion</p>
           <a href="/Vet/Details/@item.Id" class="btn btn-outline-info">Ver más...</a>
           <a href="#" onclick="loadNoticias(id,event)" class="btn btn-outline-success">Noticias</a>
+          <a href="/Vet/Editar/@item.Id" class="btn btn-outline-info">Editar</a>
         </div>
       </div>
     </div>

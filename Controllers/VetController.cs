@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Practica_2.Models;
 using Practica_2.ViewModels;
@@ -18,11 +20,13 @@ namespace Practica_2.Controllers
     {
         public List<Veterinaria> listVeterinaria = null;
         public List<Noticias> listNoticias = null;
-        public VetController()
+        private AppDbContext _context;
+        public VetController(AppDbContext context)
         {
-            var jsonString = System.IO.File.ReadAllText("Models/Veterinaria.json");
-            listVeterinaria = JsonConvert.DeserializeObject<List<Veterinaria>>(jsonString);
-            jsonString = System.IO.File.ReadAllText("Models/Noticias.json");
+            _context = context;
+            /*var jsonString = System.IO.File.ReadAllText("Models/Veterinaria.json");
+            listVeterinaria = JsonConvert.DeserializeObject<List<Veterinaria>>(jsonString);*/
+            var jsonString = System.IO.File.ReadAllText("Models/Noticias.json");
             listNoticias = JsonConvert.DeserializeObject<List<Noticias>>(jsonString);
         }
 
@@ -31,47 +35,63 @@ namespace Practica_2.Controllers
         {
             return View(new Veterinaria());
         }
-        public IActionResult Guardar(Veterinaria model)
+        [HttpPost]
+        public async Task<IActionResult> Guardar(Veterinaria model)
         {
-            if(ModelState.IsValid){
-                
+            if (ModelState.IsValid)
+            {
+                _context.Veterinarias.Add(model);
+                await _context.SaveChangesAsync();
+                return View("Index", await _context.Veterinarias.ToListAsync());
             }
             return View("Agregar", model);
-        }   
-
-        public IActionResult Index()
-        {
-            return View(listVeterinaria);
         }
 
-        public IActionResult Details(int Id){
+        public async Task<IActionResult> Index()
+        {
+            var veter = await _context.Veterinarias.ToListAsync();
+            return View(veter);
+        }
+
+        public async Task<IActionResult> Details(int Id)
+        {
+            var veter = await _context.Veterinarias.FindAsync(Id);
+
             VeterinariaNoticiasViewModel vnvm = new VeterinariaNoticiasViewModel();
-            foreach (var item in listVeterinaria)
-            {
-                if(item.Id == Id){
-                    vnvm.Veterinaria = item;
-                    vnvm.ListNoticias = listNoticias;
-                    return View(vnvm);
-                }
-            }
+            vnvm.Veterinaria = veter;
+            vnvm.ListNoticias = listNoticias;
             return View(vnvm);
         }
-        public IActionResult Find(string producto){
+        public IActionResult Find(string producto)
+        {
             List<Veterinaria> listVet = new List<Veterinaria>();
             bool enc = false;
             foreach (var item in listVeterinaria)
             {
-                if(item.Nombre.ToLower().Contains(producto.ToLower())){
+                if (item.Nombre.ToLower().Contains(producto.ToLower()))
+                {
                     enc = true;
                     listVet.Add(item);
                 }
             }
-            if(enc == true){
+            if (enc == true)
+            {
                 return View("Index", listVet);
-            }else{
+            }
+            else
+            {
                 ViewData["Message"] = "La búsqueda no coincide con ninguno de nuestros productos";
                 return View("Notification");
             }
+        }
+        public async Task<IActionResult> Delete(int id){
+            var veter = await _context.Veterinarias.FindAsync(id);
+            if(veter == null){
+                return NotFound();
+            }
+            _context.Remove(veter);
+            await _context.SaveChangesAsync();
+            return View("Index", await _context.Veterinarias.ToListAsync());
         }
     }
 }
