@@ -25,9 +25,9 @@ namespace Practica_2.Controllers
         {
             _context = context;
             /*var jsonString = System.IO.File.ReadAllText("Models/Veterinaria.json");
-            listVeterinaria = JsonConvert.DeserializeObject<List<Veterinaria>>(jsonString);*/
+            listVeterinaria = JsonConvert.DeserializeObject<List<Veterinaria>>(jsonString);
             var jsonString = System.IO.File.ReadAllText("Models/Noticias.json");
-            listNoticias = JsonConvert.DeserializeObject<List<Noticias>>(jsonString);
+            listNoticias = JsonConvert.DeserializeObject<List<Noticias>>(jsonString);*/
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -82,12 +82,8 @@ namespace Practica_2.Controllers
 
         public async Task<IActionResult> Details(int Id)
         {
-            var veter = await _context.Veterinarias.FindAsync(Id);
-
-            VeterinariaNoticiasViewModel vnvm = new VeterinariaNoticiasViewModel();
-            vnvm.Veterinaria = veter;
-            vnvm.ListNoticias = listNoticias;
-            return View(vnvm);
+            var veter = await _context.Veterinarias.Where(x => x.Id == Id).Include(x => x.Noticias).FirstAsync();
+            return View(veter);
         }
         public IActionResult Find(string producto)
         {

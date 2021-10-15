@@ -1,17 +1,34 @@
-@model List<Practica_2.Models.Noticias>
-    <div class="container" >
-        <h3> Noticias Recientes
-        </h3>
-@foreach (var item in Model)
-{
-    <div class="card" style="margin-bottom: 50px;">
-    <div class="card-body">
-        <h5 class="card-title">@item.Titulo</h5>
-        <p class="card-text">@item.Descripcion</p>
-        <p class="card-text"><small class="text-muted">@item.Posteo</small></p>
-    </div>
-    <img class="card-img-bottom" src="@item.Imagen" alt="Card image cap">
-</div>
-}
+@model Practica_2.Models.Veterinaria
+<div class="container">
+    <h3> Noticias Recientes
+    </h3>
+    @foreach (var item in Model.Noticias)
+    {
+        <div class="card" style="margin-bottom: 50px;">
+            <div class="card-body">
+                <h5 class="card-title">@item.Titulo</h5>
+                <p class="card-text">@item.Descripcion</p>
+                <p class="card-text"><small class="text-muted">@item.Posteo</small></p>
+            </div>
+            <img class="card-img-bottom" src="/resources/noticia3.jpg" alt="Card image cap">
+        </div>
+    }
+    <div class="bg-light p-2">
+        <form asp-controller="Noticias" asp-action="Guardar" method="POST">
+            <input type="hidden" name="VeterinariaId" value="@Model.Id" />
+            <div class="d-flex flex-row align-items-start">
+                <input name="Titulo" type="text" class="form-control ml-1 shadow-none textarea" placeholder="Encabezado"/>
+            </div>
+            <div class="d-flex flex-row align-items-start">
+                <textarea placeholder="Encabezado" name="Descripcion" class="form-control ml-1 shadow-none textarea">
 
+                            </textarea>
+            </div>
+            <div class="mt-2 text-right">
+                <button class="btn btn-primary btn-sm shadow-none" type="submit">Enviar noticia</button>
+                <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button>
+            </div>
+        </form>
     </div>
+
+</div>

@@ -38,6 +38,10 @@ namespace Practica_2.Models
         [Required]
         [Display(Name = "Image Detalle")]
         public string ImageDetail{get; set;}
+        public List<Noticias> Noticias {get; set;}
+        public Veterinaria(){
+            Noticias = new List<Noticias>();
+        }
 
     }
 }

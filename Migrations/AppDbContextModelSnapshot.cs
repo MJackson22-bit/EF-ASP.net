@@ -16,6 +16,31 @@ namespace Practica_2.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.10");
 
+            modelBuilder.Entity("Practica_2.Models.Noticias", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Posteo")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Titulo")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("VeterinariaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VeterinariaId");
+
+                    b.ToTable("Noticias");
+                });
+
             modelBuilder.Entity("Practica_2.Models.Veterinaria", b =>
                 {
                     b.Property<int>("Id")
@@ -23,7 +48,6 @@ namespace Practica_2.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Aplicabilidad")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Descripcion")
@@ -39,9 +63,11 @@ namespace Practica_2.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ImageDetail")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Indicaciones")
@@ -63,6 +89,22 @@ namespace Practica_2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Veterinarias");
+                });
+
+            modelBuilder.Entity("Practica_2.Models.Noticias", b =>
+                {
+                    b.HasOne("Practica_2.Models.Veterinaria", "Veterinaria")
+                        .WithMany("Noticias")
+                        .HasForeignKey("VeterinariaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Veterinaria");
+                });
+
+            modelBuilder.Entity("Practica_2.Models.Veterinaria", b =>
+                {
+                    b.Navigation("Noticias");
                 });
 #pragma warning restore 612, 618
         }

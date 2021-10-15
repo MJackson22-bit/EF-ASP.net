@@ -1,19 +1,19 @@
-@model Practica_2.ViewModels.VeterinariaNoticiasViewModel
+@model Practica_2.Models.Veterinaria
 @section styles{
     <link rel="stylesheet" href="noticia_style.css" type="text/css">
 }
 <div class="row" >
-    <h1 style="margin-left: 45%;">@Model.Veterinaria.Nombre</h1>
+    <h1 style="margin-left: 45%;">@Model.Nombre</h1>
     <br><br><br>
 </div>
 <div class="row" >
-  <img style="margin-left: 40%;" src="@Model.Veterinaria.ImageDetail" class="imagen" alt="...">
+  <img style="margin-left: 40%;" src="@Model.ImageDetail" class="imagen" alt="...">
 </div>
 @section Rigth{
  <div class="col-md-14">
       <div class="card-body">
-        <p class="card-text">@Model.Veterinaria.Descripcion</p>
-        <p class="card-text"><small class="text-muted">Aplicable a: @Model.Veterinaria.Aplicabilidad - @Model.Veterinaria.Modo</small></p>
+        <p class="card-text">@Model.Descripcion</p>
+        <p class="card-text"><small class="text-muted">Aplicable a: @Model.Aplicabilidad - @Model.Modo</small></p>
         <div class="accordion" id="accordionExample">
             <div class="card">
                     <div class="card-header" id="headingOne">
@@ -28,7 +28,7 @@
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                         data-parent="#accordionExample">
                         <div class="card-body">
-                            @Model.Veterinaria.Formulacion
+                            @Model.Formulacion
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-                            @Model.Veterinaria.Indicaciones
+                            @Model.Indicaciones
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                         data-parent="#accordionExample">
                         <div class="card-body">
-                            @Model.Veterinaria.DosisAdm
+                            @Model.DosisAdm
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
                         data-parent="#accordionExample">
                         <div class="card-body">
-                            @Model.Veterinaria.Presentacion
+                            @Model.Presentacion
                         </div>
                     </div>
                 </div>
@@ -86,5 +86,5 @@
     </div>
 }
 @section Footer{
-    @Html.Partial("Noticias", Model.ListNoticias)
+    @Html.Partial("Noticias", Model)
 }

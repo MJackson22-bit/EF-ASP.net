@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Practica_2.Models;
 using Practica_2.ViewModels;
@@ -16,16 +17,26 @@ namespace Practica_2.Controllers
 {
     public class NoticiasController : Controller
     {
-        public List<Noticias> listNoticias = null;
-        public NoticiasController()
+        private AppDbContext _context;
+        public NoticiasController(AppDbContext context)
         {
-            var jsonString = System.IO.File.ReadAllText("Models/Noticias.json");
-            listNoticias = JsonConvert.DeserializeObject<List<Noticias>>(jsonString);
+            _context = context;
         }
 
-        public IActionResult Index(int id)
+        public async Task<IActionResult> Index(int id)
         {
-            return PartialView("~/Views/Vet/Noticias.cshtml", listNoticias);
+            var veter = await _context.Veterinarias.Where(x => x.Id == id).Include(x => x.Noticias).FirstAsync();
+            return PartialView("~/Views/Vet/Noticias.cshtml", veter);
+        }
+        public async Task<IActionResult> Guardar(Noticias model){
+            if(ModelState.IsValid){
+                model.Posteo = DateTime.Now.Date.ToShortDateString();
+                _context.Noticias.Add(model);
+                await _context.SaveChangesAsync();
+                return Redirect("/Vet/Details/" + model.VeterinariaId);
+            }
+            return Redirect("/Vet/Index");
+            
         }
     }
 }

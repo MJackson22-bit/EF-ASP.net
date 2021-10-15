@@ -15,7 +15,7 @@
           </strong>
           <p class="card-text">@item.Descripcion</p>
           <a href="/Vet/Details/@item.Id" class="btn btn-outline-info">Ver más...</a>
-          <a href="#" onclick="loadNoticias(id,event)" class="btn btn-outline-success">Noticias</a>
+          <a href="#" onclick="loadNoticias(@item.Id, event)" class="btn btn-outline-success">Noticias</a>
           <a href="/Vet/Editar/@item.Id" class="btn btn-outline-info">Editar</a>
         </div>
       </div>
