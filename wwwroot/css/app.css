@@ -71,7 +71,7 @@ transform: translateX(-3px);
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, #ffffff, #c3da2f);
+    background: linear-gradient(90deg, #ffffff, #5a5a5a);
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     width: 100vw;
@@ -91,7 +91,7 @@ nav {
 }
 
 nav .menu-item {
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: 600;
     transform-style: preserve-3d;
     flex-grow: 1;
@@ -107,7 +107,7 @@ nav .menu-item {
 
 nav .menu-text, nav .menu-text a {
     font-size: 1em;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     text-shadow: 0 1px 5px rgba(0,0,0,0.1);
     transition: color 0.1s ease-out;
@@ -115,7 +115,7 @@ nav .menu-text, nav .menu-text a {
 }
 
 nav .menu-text a:hover {
-    color: rgba(255,255,255,0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 #sub-menu-holder {
@@ -221,7 +221,7 @@ nav .menu-item:nth-of-type(4):hover ~ #sub-menu-container #sub-menu-holder {
     pointer-events: none;
     bottom: -5em;
     left: calc(50% - 10px);
-    border-color: transparent transparent white transparent;
+    border-color: transparent transparent rgb(0, 0, 0) transparent;
     border-width: 10px;
     border-style: solid;
 }
@@ -402,7 +402,7 @@ nav .menu-item.highlight:hover ~ #sub-menu-container #sub-menu-holder #sub-menu-
     list-style: none;
 }
 #info-box a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     text-align: right;
     padding: 0.5em 0;
@@ -479,4 +479,18 @@ nav .menu-item.highlight:hover ~ #sub-menu-container #sub-menu-holder #sub-menu-
     padding: 0px;
     float: left;
     z-index: 4;
+}
+.center{
+    margin: 0 auto;
+    text-decoration-line: underline;
+    text-shadow: #7a8a94;
+    elevation: vertical;
+    text-overflow: ellipsis;
+    text-size-adjust: auto;
+    text-decoration-color: #808080;
+    text-orientation: sideways-right;
+    border-radius: 20px;
+    border-color: white;
+    border: solid 1px;
+    padding: 100px;
 }

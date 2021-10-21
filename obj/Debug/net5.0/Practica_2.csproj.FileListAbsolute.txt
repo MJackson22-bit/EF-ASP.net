@@ -1118,7 +1118,6 @@ C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\V
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Shared\Components\Noticias\Default.cshtml.g.cs
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Shared\EditorTemplates\Veterinaria.cshtml.g.cs
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Shared\_LayoutVentas.cshtml.g.cs
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Vet\Agregar.cshtml.g.cs
@@ -1552,3 +1551,4 @@ C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\A
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\Jackson\Documents\Proyectos-ASP.NET\EF-ASP.net\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs

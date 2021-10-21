@@ -77,18 +77,18 @@ namespace Practica_2.Controllers
             }
             return View("Agregar", model);
         }
-
         public async Task<IActionResult> Index()
         {
             var veter = await _context.Veterinarias.ToListAsync();
             return View(veter);
         }
-
+        [Authorize]
         public async Task<IActionResult> Details(int Id)
         {
             var veter = await _context.Veterinarias.Where(x => x.Id == Id).Include(x => x.Noticias).FirstAsync();
             return View(veter);
         }
+        [Authorize]
         public async Task<IActionResult> Find(string producto)
         {
             List<Veterinaria> listVet = new List<Veterinaria>();
