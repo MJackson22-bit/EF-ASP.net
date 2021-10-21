@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +32,7 @@ namespace Practica_2.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin_Edit_Del")]
         public async Task<IActionResult> Editar(int? Id, Veterinaria model){
             if(Id == null){
                 return NotFound();
@@ -48,6 +50,7 @@ namespace Practica_2.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin_Edit_Del")]
         public async Task<IActionResult> Editar(int? Id){
             if(Id == null){
                 return NotFound();
@@ -58,6 +61,7 @@ namespace Practica_2.Controllers
             }
             return View(veter);
         }
+        [Authorize(Roles = "Admin_Agregar")]
         public IActionResult Agregar()
         {
             return View(new Veterinaria());
@@ -108,6 +112,7 @@ namespace Practica_2.Controllers
                 return View("Notification");
             }
         }
+        [Authorize(Roles = "Admin_Edit_Del")]
         public async Task<IActionResult> Delete(int id){
             var veter = await _context.Veterinarias.FindAsync(id);
             if(veter == null){
