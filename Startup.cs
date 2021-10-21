@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Practica_2.Models;
+using Microsoft.AspNetCore.Identity;
 
 
 namespace Practica_2
@@ -34,6 +35,9 @@ namespace Practica_2
                .EnableSensitiveDataLogging()
                .EnableDetailedErrors()
             );
+            services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
 
         }
 
@@ -52,8 +56,10 @@ namespace Practica_2
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
@@ -61,7 +67,8 @@ namespace Practica_2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Vet}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

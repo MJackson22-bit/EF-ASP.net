@@ -15656,6 +15656,21 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Views\\Vet\\Notification.cshtml",
       "TargetPath": "Views\\Vet\\Notification.cshtml",
       "FileKind": "mvc"
@@ -15676,6 +15691,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Views\\Vet\\Index.cshtml",
       "TargetPath": "Views\\Vet\\Index.cshtml",
       "FileKind": "mvc"
@@ -15691,6 +15711,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Views\\Shared\\EditorTemplates\\Veterinaria.cshtml",
       "TargetPath": "Views\\Shared\\EditorTemplates\\Veterinaria.cshtml",
       "FileKind": "mvc"
@@ -15698,6 +15728,16 @@
     {
       "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Views\\Vet\\Details.cshtml",
       "TargetPath": "Views\\Vet\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15718,6 +15758,11 @@
     {
       "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jackson\\Documents\\Proyectos-ASP.NET\\EF-ASP.net\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
       "FileKind": "mvc"
     },
     {

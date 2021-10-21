@@ -85,11 +85,12 @@ namespace Practica_2.Controllers
             var veter = await _context.Veterinarias.Where(x => x.Id == Id).Include(x => x.Noticias).FirstAsync();
             return View(veter);
         }
-        public IActionResult Find(string producto)
+        public async Task<IActionResult> Find(string producto)
         {
             List<Veterinaria> listVet = new List<Veterinaria>();
+            var veter = await _context.Veterinarias.ToListAsync();
             bool enc = false;
-            foreach (var item in listVeterinaria)
+            foreach (var item in veter)
             {
                 if (item.Nombre.ToLower().Contains(producto.ToLower()))
                 {
