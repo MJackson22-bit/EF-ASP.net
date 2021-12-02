@@ -1,14 +1,14 @@
 @page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Registrarse";
 }
 
 <h1 style="text-align: center;">@ViewData["Title"]</h1>
 <div class="contenedor">
       <div class="center">
            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
+            <h4>Crea una nueva cuenta.</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
@@ -26,7 +26,7 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>
       </div> 
 </div>
@@ -34,15 +34,14 @@
  @section Rigth{
         <div class="center">
         <section>
-            <h4>Use another service to register.</h4>
+            <h4 align="center">Regístrate para ver los servicios de AGROVET.</h4>
             <hr />
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
                     <div>
                         <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
+                           Para ver los artículos que ofrece la veterinaria en línea AGROVET ingresa y obtendrás informacíon, así como tabién los detalles de cada producto.
                         </p>
                     </div>
                 }

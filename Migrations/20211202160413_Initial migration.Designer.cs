@@ -9,8 +9,8 @@ using Practica_2.Models;
 namespace Practica_2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211021055431_CreateIdentitySchema")]
-    partial class CreateIdentitySchema
+    [Migration("20211202160413_Initial migration")]
+    partial class Initialmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

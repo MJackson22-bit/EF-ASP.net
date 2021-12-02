@@ -50,7 +50,6 @@ namespace Practica_2.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin_Edit_Del")]
         public async Task<IActionResult> Editar(int? Id){
             if(Id == null){
                 return NotFound();
@@ -61,7 +60,6 @@ namespace Practica_2.Controllers
             }
             return View(veter);
         }
-        [Authorize(Roles = "Admin_Agregar")]
         public IActionResult Agregar()
         {
             return View(new Veterinaria());
@@ -77,6 +75,7 @@ namespace Practica_2.Controllers
             }
             return View("Agregar", model);
         }
+        [Authorize()]
         public async Task<IActionResult> Index()
         {
             var veter = await _context.Veterinarias.ToListAsync();
@@ -112,7 +111,6 @@ namespace Practica_2.Controllers
                 return View("Notification");
             }
         }
-        [Authorize(Roles = "Admin_Edit_Del")]
         public async Task<IActionResult> Delete(int id){
             var veter = await _context.Veterinarias.FindAsync(id);
             if(veter == null){
