@@ -28,17 +28,21 @@ namespace Practica_2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options => {
+            services.AddCors(options =>
+           {
                options.AddPolicy(name: MyAllowSpecificOrigins,
-               builder => {
-                   builder.WithOrigins("https://localhost:4200").AllowAnyHeader().AllowAnyMethod();
-               });
-            });
+                   builder =>
+                   {
+                       builder.WithOrigins("http://localhost:4200")
+                                               .AllowAnyHeader()
+                                               .AllowAnyMethod();
+                   });
+           });
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddDbContext<AppDbContext>
             (options => options
-               .UseMySql(Configuration.GetConnectionString("AppDbContextString"),  
-                  new MariaDbServerVersion(new Version(10,6,4)))
+               .UseMySql(Configuration.GetConnectionString("AppDbContextString"),
+                  new MariaDbServerVersion(new Version(10, 6, 4)))
                .EnableSensitiveDataLogging()
                .EnableDetailedErrors()
             );
@@ -63,10 +67,10 @@ namespace Practica_2
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            
+
 
             app.UseRouting();
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors(MyAllowSpecificOrigins); 
             app.UseAuthentication();
 
             app.UseAuthorization();
